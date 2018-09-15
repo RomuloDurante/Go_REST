@@ -40,6 +40,7 @@ func Delete(w http.ResponseWriter, r *http.Request) (err error) {
 		if intID == value.ID && value.ActiveUser == true {
 			checkUser.Users[key].ActiveUser = false
 			checkUser.UserInfo.DetetedUsers++
+			checkUser.UserInfo.ActiveUsers--
 			// create update user
 			upUser, err := json.MarshalIndent(checkUser, "", "")
 			if err != nil {

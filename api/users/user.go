@@ -3,13 +3,14 @@ package users
 // UserData ...
 type UserData struct {
 	UserInfo infoUsers `json:"userInfo"`
-	Users    []User    `json:"user"`
+	Users    []User    `json:"users"`
 }
 
 // InfoUsers
 type infoUsers struct {
 	LastID        int `json:"lastId"`
 	NumberOfUsers int `json:"numberOfUsers"`
+	ActiveUsers   int `json:"activeUsers"`
 	DetetedUsers  int `json:"detetedUsers "`
 }
 

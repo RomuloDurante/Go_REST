@@ -1,0 +1,63 @@
+
+{{template "_head"}}
+
+<body>
+  <header class="header">
+    <div class="header__img">
+      <nav class="header__nav">
+        <div class="menu">
+          <div class="menu--item1"></div>
+          <div class="menu--item2"></div>
+        </div>
+        <div class="header__logo">
+          <img src="img/mainicon3.png" alt="" class="header__logo--img">
+          <h1 class="header__logo--name">Word Hunter</h1>
+        </div>
+        <!-- <a href="book.html" class="btn btn__green float--rigth">Login</a> -->
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <section class="section__library">
+      <div class="row">
+        <div class="col-1-of-4">
+          <div class="card card--scale">
+            <div class="card__head">
+              <!-- TODO: here we will inject the image {bookImage} -->
+            </div>
+            <div class="card__body">
+              <h3>{{.FirstName}}</h3>
+              <div class="dificulty">
+                <span>Dificuldade: </span>
+                <span>{{.LastName}}</span>
+              </div>
+              <div class="author">
+                <span>Autor: </span>
+                <span>{{.Email}}</span>
+              </div>
+              <div class="rating">
+                <span>Rating: </span>
+                <span>{rating}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-of-4">
+          card2
+        </div>
+        <div class="col-1-of-4">
+          card3
+        </div>
+        <div class="col-1-of-4">
+          card4
+        </div>
+      </div>
+    </section>
+
+
+{{template "_footer"}}
+<!-- TRICK WORD -->
+<!-- TRICK READ -->
+<!-- TRICK TO READ -->
+<!-- hunterword.app -->
+<!-- wordhunter.app -->

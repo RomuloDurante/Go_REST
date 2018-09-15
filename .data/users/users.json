@@ -2,9 +2,10 @@
 "userInfo": {
 "lastId": 0,
 "numberOfUsers": 0,
+"activeUsers": 0,
 "detetedUsers ": 0
 },
-"user": [
+"users": [
 
 ]
 }

@@ -33,8 +33,6 @@ func HandleAPI(w http.ResponseWriter, r *http.Request) {
 			err = books.Post(w, r)
 		case "PUT":
 			err = books.Put(w, r)
-		case "DELETE":
-			err = books.Delete(w, r)
 		}
 	}
 

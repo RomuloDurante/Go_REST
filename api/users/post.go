@@ -46,6 +46,7 @@ func Post(w http.ResponseWriter, r *http.Request) (err error) {
 	// push newUser to dataUser
 	dataUser.Users = append(dataUser.Users, newUser)
 	dataUser.UserInfo.NumberOfUsers++
+	dataUser.UserInfo.ActiveUsers++
 	// parse the newUser to json
 	data, err := json.MarshalIndent(dataUser, "", "")
 	if err != nil {
