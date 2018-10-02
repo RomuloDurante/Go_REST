@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"strconv"
+
+	"github.com/RomuloDurante/WordHunter/api/helpers"
 )
 
 // Delete service
@@ -18,20 +19,7 @@ func Delete(w http.ResponseWriter, r *http.Request) (err error) {
 	json.Unmarshal(users, &checkUser)
 
 	// get the id from url
-	query := r.URL.Query()
-	var id string
-
-	for key, value := range query {
-		if key == "id" {
-			for _, queryID := range value {
-				id = queryID
-			}
-		}
-
-	}
-
-	// conv id to int
-	intID, err := strconv.Atoi(id)
+	intID, err := helpers.GetQueryID(r)
 	if err != nil {
 		return
 	}

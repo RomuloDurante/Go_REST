@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 
-	"github.com/RomuloDurante/WordHunter/restApi_GO/api/helpers"
+	"github.com/RomuloDurante/WordHunter/api/helpers"
 )
 
 // Post service
@@ -31,7 +32,8 @@ func Post(w http.ResponseWriter, r *http.Request) (err error) {
 	dataUser.UserInfo.LastID = id
 
 	// use the new id to create newUser
-	newUser.ID = id
+	newUser.ID = helpers.Token(10) + strconv.Itoa(id)
+	newUser.ActiveUser = true
 
 	// read the body content
 	body := helpers.GetBody(r)

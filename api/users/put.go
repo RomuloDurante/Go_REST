@@ -5,9 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strconv"
 
-	"github.com/RomuloDurante/WordHunter/restApi_GO/api/helpers"
+	"github.com/RomuloDurante/WordHunter/api/helpers"
 )
 
 // Put service
@@ -20,19 +19,8 @@ func Put(w http.ResponseWriter, r *http.Request) (err error) {
 	var checkUser UserData
 	json.Unmarshal(users, &checkUser)
 
-	// get the query string
-	query := r.URL.Query()
-	var id string
-
-	for key, value := range query {
-		if key == "id" {
-			for _, queryID := range value {
-				id = queryID
-			}
-		}
-	}
-	// conv id to int
-	intID, err := strconv.Atoi(id)
+	// get the id from url
+	intID, err := helpers.GetQueryID(r)
 	if err != nil {
 		return
 	}
@@ -68,6 +56,7 @@ func Put(w http.ResponseWriter, r *http.Request) (err error) {
 				}
 				break
 			}
+
 		}
 
 	}

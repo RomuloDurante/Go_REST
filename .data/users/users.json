@@ -1,11 +1,40 @@
 {
 "userInfo": {
-"lastId": 0,
-"numberOfUsers": 0,
-"activeUsers": 0,
+"lastId": 3,
+"numberOfUsers": 3,
+"activeUsers": 3,
 "detetedUsers ": 0
 },
 "users": [
-
+{
+"activeUser": true,
+"id": "wV3qK2uV3iY4tM0xR0iI7gG5hS2lU61",
+"firstName": "Maria",
+"lastName": "COto",
+"email": "romin@.com",
+"password": "987654",
+"agree": true,
+"wordVault": null
+},
+{
+"activeUser": true,
+"id": "rB4mP4nH1lK4sV1aS0lQ9jV3nU3jH32",
+"firstName": "Romulo",
+"lastName": "COto",
+"email": "romin@.com",
+"password": "987654",
+"agree": true,
+"wordVault": null
+},
+{
+"activeUser": true,
+"id": "uI9pV8eH7wA6pD1gJ8oQ9lK2aE2yE63",
+"firstName": "",
+"lastName": "",
+"email": "",
+"password": "",
+"agree": false,
+"wordVault": null
+}
 ]
 }
