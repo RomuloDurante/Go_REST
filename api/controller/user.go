@@ -1,15 +1,9 @@
-package users
+package controller
 
-import (
-	"encoding/json"
-	"io/ioutil"
-	"net/http"
+import "fmt"
 
-	"github.com/RomuloDurante/WordHunter/api/helpers"
-)
-
-// UserData ...
-type UserData struct {
+// DataUser ...
+type DataUser struct {
 	UserInfo infoUsers `json:"userInfo"`
 	Users    []User    `json:"users"`
 }
@@ -46,28 +40,25 @@ type myBooks struct {
 
 /*************Methods USERDATA*****************************/
 
-//Payload ...
-func (userData *UserData) Payload(r *http.Request, opt string) (*UserData, UserData, error) {
-	//open the data books
-	books, err := ioutil.ReadFile(".data/users/users.json")
-	json.Unmarshal(books, &userData)
+//ShowItem ...
+func (dataUser DataUser) ShowItem() {
+	fmt.Printf("%+v\n", dataUser)
+}
 
-	// create newdata (*UserData, UserData, error)
-	var newData UserData
+// TakeUser ...
+func (dataUser DataUser) TakeUser() ([]User, error) {
+	return dataUser.Users, nil
+}
 
-	if opt == "post" {
-		// read the body content
-		body := helpers.GetBody(r)
-
-		// push the body into newData
-		err = json.Unmarshal(body, &newData)
-		if err != nil {
-			return nil, newData, err
+//ByID ...
+func (dataUser DataUser) ByID(item, id string) (interface{}, error) {
+	if item == "user" {
+		for _, user := range dataUser.Users {
+			if user.ID == id {
+				return &user, nil
+			}
 		}
-
-		return userData, newData, nil
-
 	}
 
-	return userData, newData, nil
+	return nil, fmt.Errorf("%v", "Could not find the data by ID")
 }

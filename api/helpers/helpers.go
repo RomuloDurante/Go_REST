@@ -1,24 +1,25 @@
 package helpers
 
 import (
+	"encoding/json"
+	"fmt"
 	"math/rand"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
-// GetBody ...
-func GetBody(r *http.Request) []byte {
-	// read the body content
-	len := r.ContentLength
-	body := make([]byte, len)
-	r.Body.Read(body)
+//Helpers ...
+type Helpers struct{}
 
-	return body
+//Help ...-> helpers interface
+type Help interface {
+	ByID(item, id string) (interface{}, error)
 }
 
 //GetQueryID string
-func GetQueryID(r *http.Request) (string, error) {
+func (Helpers) GetQueryID(r *http.Request) (string, error) {
 	// get the query string
 	query := r.URL.Query()
 	var id string
@@ -36,7 +37,7 @@ func GetQueryID(r *http.Request) (string, error) {
 }
 
 // Token ...
-func Token(size int) string {
+func (Helpers) Token(size int) string {
 	var token string
 
 	for i := 0; i < size; i++ {
@@ -59,4 +60,42 @@ func Token(size int) string {
 
 	return token
 
+}
+
+//Capitalize words
+func (Helpers) Capitalize(s string) string {
+	cap := []rune(s)
+	upper := strings.ToUpper(string(cap[0]))
+	cap[0] = []rune(upper)[0]
+
+	upper = string(cap)
+
+	return upper
+}
+
+//JSONstring ...
+func (Helpers) JSONstring(dt interface{}, err error) ([]byte, error) {
+
+	if err != nil {
+		return nil, err
+	}
+	data, err := json.MarshalIndent(dt, " ", " ")
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+//JSONstruct ...
+func (Helpers) JSONstruct(dt []byte, str Help) (Help, error) {
+
+	err := json.Unmarshal(dt, &str)
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+
+	}
+
+	return str, nil
 }

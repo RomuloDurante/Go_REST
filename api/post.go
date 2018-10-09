@@ -3,45 +3,28 @@ package api
 import (
 	"net/http"
 
-	"github.com/RomuloDurante/WordHunter/api/books"
+	"github.com/RomuloDurante/Go_REST/api/controller"
 )
 
-// POST service
-type POST struct{}
+//Post ...
+func Post(w http.ResponseWriter, r *http.Request, c *controller.Controller) error {
 
-//BooksPOST service ...
-func (p POST) BooksPOST(w http.ResponseWriter, r *http.Request) (err error) {
-	//DataBook
-	var dataBook *books.BookData
-	//get the payload
-	dataBook, newData, err := dataBook.Payload(r, "post")
+	data, err := c.ReadData()
+	if err != nil {
+		return err
+	}
+
+	body, err := c.GetBody(r)
+	if err != nil {
+		return err
+	}
+
+	msg, err := c.CreateItem(data, body)
 
 	if err != nil {
 		return err
 	}
 
-	// compare the data with newData and see if the author name matches
-	author, opt := dataBook.CheckAuthor(map[string]string{"by": "name"}, &newData)
-
-	// if the author exists append the newBook
-	if opt == true {
-		// check if book exits
-		_, _, opt := dataBook.CheckBook(map[string]string{"by": "name"}, &newData)
-
-		// if not create newBook
-		if opt == false {
-			dataBook.CreateBook(newData, author)
-			w.Write([]byte("Book was create"))
-
-		} else {
-			w.Write([]byte("Book already exists"))
-		}
-
-		//if the author does not exists createAuthor
-	} else if opt == false {
-		dataBook.CreateAuthor(newData)
-		w.Write([]byte("Author was create"))
-	}
-
+	w.Write(msg)
 	return nil
 }

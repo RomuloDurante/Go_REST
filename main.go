@@ -8,7 +8,7 @@ import (
 
 func main() {
 	server := http.Server{
-		Addr: "127.0.0.1:3000",
+		Addr: "127.0.0.1:8000",
 	}
 	http.HandleFunc("/api/", api.HandleAPI)
 	server.ListenAndServe()

@@ -1,0 +1,63 @@
+{
+  "bookInfo": {
+   "numberOfBooks": 0,
+   "numberOfAuthors": 5,
+   "fullRating": [
+    "yL5uU8wW8kO7uM5yC2oU5uH5iL8oE5",
+    "jD7sF4jR6hO4cY6mW7wO9tP0pN9yK7",
+    "yS5uD9kP2wG5yF9aS7vD9kB6qT2tU9"
+   ]
+  },
+  "author": [
+   {
+    "name": "Lewis Carroll",
+    "id": "gO2hL7vV6lM6lA5fL0mB1rP4wW9bI9",
+    "aboutAuthor": "Charles Lutwidge Dodgson 27 January 1832 – 14 January 1898), better known by his pen name Lewis Carroll, was an English writer of                 world-famous children’s fiction, notably Alice's Adventures in Wonderland and its sequel Through the Looking-Glass. He was noted for his              facility at word play, logic and fantasy.",
+    "forum": null
+   },
+   {
+    "name": "Arthur Conan Doyle",
+    "id": "uO2oA4pL2nB3oP5xF1tH7kM0cQ0xA9",
+    "aboutAuthor": "Sir Arthur Ignatius Conan Doyle KStJ DL (22 May 1859 – 7 July 1930) was a British writer best known for his detective fiction featuring the character Sherlock Holmes. Originally a physician, in 1887 he published A Study in Scarlet, the first of four novels about Holmes and Dr. Watson..",
+    "forum": null
+   },
+   {
+    "name": "Leo Tolstoy",
+    "id": "sG2yD5nG0pM8jJ9tX2yQ8bR0vH3mF0",
+    "aboutAuthor": "Born to an aristocratic Russian family in 1828, he is best known for the novels War and Peace (1869) and Anna Karenina (1877), often cited as pinnacles of realist fiction.[3] He first achieved literary acclaim in his twenties with his semi-autobiographical trilogy, Childhood, Boyhood, and Youth (1852–1856), and Sevastopol Sketches (1855), based upon his experiences in the Crimean War. ",
+    "forum": null
+   }
+  ],
+  "books": [
+   {
+    "name": "Alice in Wordeland",
+    "id": "yL5uU8wW8kO7uM5yC2oU5uH5iL8oE5",
+    "authorId": "gO2hL7vV6lM6lA5fL0mB1rP4wW9bI9",
+    "rating": 8,
+    "year": "1865",
+    "aboutBook": "Alice's Adventures in Wonderland (commonly shortened to Alice in Wonderland) is an 1865 novel written by English author Charles Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a girl named Alice falling through a rabbit hole into a fantasy world populated by peculiar, anthropomorphic creatures.",
+    "dificulty": "2",
+    "forum": null
+   },
+   {
+    "name": "Sherlock Holmes",
+    "id": "jD7sF4jR6hO4cY6mW7wO9tP0pN9yK7",
+    "authorId": "uO2oA4pL2nB3oP5xF1tH7kM0cQ0xA9",
+    "rating": 2,
+    "year": "1892",
+    "aboutBook": "The Adventures of Sherlock Holmes is a collection of twelve short stories by Arthur Conan Doyle, featuring his fictional detective Sherlock Holmes. It was first published on 14 October 1892; the individual stories had been serialised in The Strand Magazine between July 1891 and June 1892.",
+    "dificulty": "2",
+    "forum": null
+   },
+   {
+    "name": "War and Peace",
+    "id": "yS5uD9kP2wG5yF9aS7vD9kB6qT2tU9",
+    "authorId": "sG2yD5nG0pM8jJ9tX2yQ8bR0vH3mF0",
+    "rating": 1,
+    "year": "1869",
+    "aboutBook": "The novel chronicles the history of the French invasion of Russia and the impact of the Napoleonic era on Tsarist society through the stories of five Russian aristocratic families. Portions of an earlier version, titled The Year 1805, were serialized in The Russian Messenger from 1865 to 1867. The novel was first published in its entirety in 1869.",
+    "dificulty": "2",
+    "forum": null
+   }
+  ]
+ }
